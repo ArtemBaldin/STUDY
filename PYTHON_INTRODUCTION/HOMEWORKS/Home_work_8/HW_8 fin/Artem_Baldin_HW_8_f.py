@@ -26,8 +26,9 @@ with open("questions.txt", "rt") as date, \
 
 print("")
 
-f2 = open("questions_list_todo.txt", "r+")
-list_q = f2.read()
+with open("questions_list_todo.txt", "r+") as data:
+    list_q = data.read()
+    
 list_q = list_q.replace(" ", "")
 list_q = list_q.replace("'", "")
 list_q = list_q[1:-1].split(",")
@@ -36,8 +37,8 @@ with open("questions_list_todo.txt", "wt") as file:
     for i in range(len(list_q)):
         file.write(list_q[i] + ": \n")
 
-f1 = open("questions_list_todo.txt", "rt")
-print(f1.read())
+with open("questions_list_todo.txt", "rt") as data:
+    print(data.read())
 # преобразовал данные и записал их в тот-же файл
 
 '''
